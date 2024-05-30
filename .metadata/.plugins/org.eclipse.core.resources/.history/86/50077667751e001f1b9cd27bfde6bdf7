@@ -1,0 +1,39 @@
+package StepDefinations;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import hudlpageobjects.hudlloginobjects;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class hudlstepdef {
+	public hudlloginobjects hudlloginobjects;
+	public hudlpageobjects.basetesthudl basetesthudl; 
+	 WebDriver driver;
+	public hudlstepdef(WebDriver driver)
+	{
+		
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		
+	}
+	@Given("User hits hudl url")
+	public void user_hits_hudl_url() throws InterruptedException {
+		basetesthudl.startDriverInstance();
+	  
+	}
+
+	@When("user selects valid credentials")
+	public void user_selects_valid_credentials() {
+	    hudlloginobjects.loginhudl();
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("user should be logged in to hudl application")
+	public void user_should_be_logged_in_to_hudl_application() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+}

@@ -1,0 +1,6 @@
+logIn=//button[text()='Log In']
+googlebutton=//button[@id='btn-google-login']
+username=//input[@type='email']
+nextbutton=//span[text()='Next']
+password=//input[@type='password']
+LoggedinName=//span[contains(text(),'Monika')]

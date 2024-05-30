@@ -1,0 +1,22 @@
+package hudlutilities;
+
+import java.io.FileReader;
+
+public class configReader {
+public String readprojectconfiguration(String keyName)
+{
+	String value=null;
+	
+	try {
+		FileReader file=new FileReader(new File("\\configFiles\\project.properties"));
+		
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+		//throws(new RuntimeException("***Error:- key with name"+ keyName +" "does not exist"));
+	}
+	return value;
+	
+}
+}

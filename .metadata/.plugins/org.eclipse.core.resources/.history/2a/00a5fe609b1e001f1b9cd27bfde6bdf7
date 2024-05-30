@@ -1,0 +1,82 @@
+package StepDefinations;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import hudlpageobjects.hudlloginobjects;
+import hudlutilities.SharedState;
+import hudlutilities.configReader;
+import hudlpageobjects.basetesthudl;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class hudlstepdef {
+
+	hudlloginobjects hudlloginsobj;
+	public basetesthudl basetesthudl; 
+
+
+	private SharedState sharedState;
+
+	public hudlstepdef(SharedState sharedState) {
+		this.sharedState = sharedState;
+	}
+
+	@Before
+	public void setUp() {
+		WebDriver driver = new ChromeDriver();
+		sharedState.setDriver(driver);
+	}
+
+	@After
+	public void tearDown() 
+	{
+		WebDriver driver = sharedState.getDriver();
+		if (driver != null) 
+		{
+			driver.quit();
+		}
+	}
+		@Given("User hits hudl url")
+		public void user_hits_hudl_url() throws InterruptedException {
+			WebDriver driver = sharedState.getDriver();
+			basetesthudl instance=new basetesthudl(driver);
+			driver=instance.startDriverInstance();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+
+		}
+
+		@When("user selects valid credentials")
+		public void user_selects_valid_credentials() throws InterruptedException {
+			WebDriver driver = sharedState.getDriver();
+			hudlloginobjects hudlloginsobj=new hudlloginobjects(driver);
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+			Thread.sleep(20000);
+			//driver.findElement(By.xpath("//button[text()='Log In']")).click();
+			driver.findElement(By.xpath(configReader.readElementLocators("logIn"))).click();
+			//hudlloginsobj.clickonLoginbutton();
+			hudlloginsobj.clickOnGoogleButton();
+			hudlloginsobj.enterUserName(configReader.readprojectconfiguration("UserName"));
+			hudlloginsobj.clickonNextbutton();
+			hudlloginsobj.enterpassword(configReader.readprojectconfiguration("Password"));
+			hudlloginsobj.clickonNextbutton();
+
+
+		}
+
+		@Then("user should be logged in to hudl application")
+		public void user_should_be_logged_in_to_hudl_application() throws InterruptedException {
+			WebDriver driver = sharedState.getDriver();
+			hudlloginobjects hudlloginsobj1=new hudlloginobjects(driver);
+			hudlloginsobj1.waitforelementtoappear();
+			hudlloginsobj1.verifLoggedinName("Monika");
+			throw new io.cucumber.java.PendingException();
+		}
+	}

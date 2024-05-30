@@ -1,0 +1,25 @@
+package rahulshettyacademy.stepDefinitions;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class StepDefinationImplHudl {
+	@Given("I want to login to the hudl and hit url")
+	public void i_want_to_login_to_the_hudl_and_hit_url() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("I choose my email as loginname")
+	public void i_choose_my_email_as_loginname() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("I should be able to login successfully")
+	public void i_should_be_able_to_login_successfully() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+}

@@ -1,0 +1,11 @@
+################Project Configuration########################
+ApplicationURL= https://fan.hudl.com/ 
+browserName=chrome
+Environment=QA
+
+
+
+
+############User Configuration#############
+UserName= durgmonika
+password= CG@monika

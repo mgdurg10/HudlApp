@@ -1,0 +1,2 @@
+logIn=//button[text()='Log In']
+googlebutton=//button[@id='btn-google-login']

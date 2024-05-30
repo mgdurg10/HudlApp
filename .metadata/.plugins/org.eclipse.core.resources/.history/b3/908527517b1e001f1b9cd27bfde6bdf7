@@ -1,0 +1,34 @@
+package hudlpageobjects;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import hudlutilities.configReader;
+
+public class hudlloginobjects {
+	static WebDriver driver;
+	
+	public hudlloginobjects(WebDriver driver)
+	{
+		//super(driver);
+		//initialization
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		
+	}
+
+	
+public static void loginhudl()
+	{
+	driver.findElement(By.xpath(configReader.readElementLocators("logIn"))).click();
+	driver.findElement(By.xpath(configReader.readElementLocators("googlebutton"))).click();
+	
+		withGoogleEmailId.click();
+		
+}
+}
+
+

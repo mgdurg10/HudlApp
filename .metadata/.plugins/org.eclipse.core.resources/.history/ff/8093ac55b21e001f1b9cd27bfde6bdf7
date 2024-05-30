@@ -1,0 +1,13 @@
+
+Feature: To verify Login functionality for Hudl 
+ 
+ Scenario: Verify login functionality with valid credentials
+    Given user hits url
+    Then user enters credentials
+    Then validate loggedinName
+  	
+
+ Scenario: To verify Login functionality for Hudl with Invalid Credentials
+    Given user hits url again
+    Then user enters invalid username
+    Then validate loggedinName

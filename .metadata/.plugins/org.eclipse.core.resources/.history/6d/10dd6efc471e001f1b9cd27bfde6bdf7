@@ -1,0 +1,33 @@
+package hudlpageobjects;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.PageFactory;
+
+public class basetesthudl {
+	WebDriver driver;
+	public basetesthudl(WebDriver driver)
+	{
+		super();
+		//initialization
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		
+	}
+	ChromeOptions options = new ChromeOptions();
+   // WebDriverManager.chromedriver().setup();
+	//options.setExperimentalOption("excludeswitches", Arrays.asList("--disable-popup-blocking","enable-automation","--disable-notifications"));
+	 
+	options.addArguments("--disable-dev-shm-usage");
+	options.addArguments("--ignore-ssl-errors=yes");
+	options.addArguments("--ignore-certificate-errors");
+	options.addArguments("--disable-notifications");
+      options.addArguments("--disable-popup-blocking");
+      options.addArguments("--no-sandbox");
+     
+	options.setBinary("C:\\Users\\Monika Durgude\\Downloads\\SeleniumFrameworkDesign\\SeleniumFrameworkDesign\\chromedriver.exe");
+	 driver = new ChromeDriver(options);
+	driver.get("https://fan.hudl.com/");
+	driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+}

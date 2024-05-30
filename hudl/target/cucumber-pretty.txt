@@ -1,0 +1,5 @@
+
+Scenario: Verify login functionality with valid credentials # src/test/resources/features/hudllogin.feature:6
+  Given User hits hudl url                                  # StepDefinations.hudlstepdef.user_hits_hudl_url()
+  When user selects valid credentials                       # StepDefinations.hudlstepdef.user_selects_valid_credentials()
+  Then user should be logged in to hudl application         # StepDefinations.hudlstepdef.user_should_be_logged_in_to_hudl_application()

@@ -1,0 +1,11 @@
+
+Feature: To verify Login functionality for Hudl 
+ 
+
+ 
+  Scenario: Verify login functionality with valid credentials
+    Given User hits hudl url
+     When user selects valid credentials
+  	Then user should be logged in to hudl application
+  
+

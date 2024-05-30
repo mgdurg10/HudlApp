@@ -1,0 +1,40 @@
+package hudlpageobjects;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class hudlloginobjects {
+	WebDriver driver;
+	public hudlloginobjects(WebDriver driver)
+	{
+		super();
+		//initialization
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		
+	}
+	@FindBy(xpath="//button[text()='Log In']")
+	static WebElement logInbutton;
+	
+	@FindBy(xpath="//button[@id='btn-google-login']")
+	static WebElement withGoogle;
+	
+	@FindBy(xpath="//div[@data-email='monikagd2015@gmail.com']")
+	static WebElement withGoogleEmailId;
+	
+	
+	@FindBy(xpath="//span[contains(text(),'monika')]")
+	static WebElement loggedinName;
+	
+	public static void loginhudl()
+	{
+		logInbutton.click();
+		withGoogle.click();
+		withGoogleEmailId.click();
+		
+}
+}
+
+

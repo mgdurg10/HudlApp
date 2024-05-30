@@ -1,0 +1,12 @@
+
+@tag
+Feature: Verify Login fuctionality
+
+
+  @test
+  Scenario: Login Hudl Application with Valid user credentials
+    Given I want to login to the hudl and hit url
+    When I choose my email as loginname
+   Then I should be able to login successfully
+    
+
